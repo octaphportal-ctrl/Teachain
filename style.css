@@ -1,6 +1,6 @@
-/* --- 確保檔案最開頭有這些基本重設 --- */
+/* --- 1. 基本重設 (Reset) --- */
 * {
-    box-sizing: border-box; /* 確保 padding 和 border 不會增加元素寬度 */
+    box-sizing: border-box; 
     margin: 0;
     padding: 0;
 }
@@ -10,21 +10,218 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: #f8f8f8;
-    /* 關鍵：讓內容居中 */
-    display: flex;
-    flex-direction: column; 
+    display: flex; /* 啟用 Flexbox */
+    flex-direction: column; /* 讓子元素垂直堆疊 */
     min-height: 100vh; /* 確保 body 至少佔滿視窗高度 */
 }
 
-/* --- 新增跨頁面內容樣式 --- */
+/* --- 2. 導覽列樣式 (Navbar) --- */
+.navbar {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    background-color: #ffffff; 
+    padding: 15px 5%; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #007bff; 
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+}
+
+.navbar li {
+    margin-left: 20px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #ff6f00; /* 懸停時變色 */
+}
+
+.cart-button {
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+/* --- 3. 首頁主視覺區塊樣式 (Hero Section) --- */
+.hero-section {
+    background-color: #e0f7fa; 
+    color: #01579b;
+    padding: 80px 20px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.hero-section h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.hero-section p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    padding: 12px 30px;
+    background-color: #ff6f00; 
+    color: white;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+/* --- 4. 首頁產品展示區塊 (Product Display) --- */
+.products-section {
+    text-align: center;
+    padding: 20px 5%;
+}
+
+.products-section h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+.product-grid {
+    display: flex;
+    justify-content: space-around; 
+    gap: 20px; 
+}
+
+.product-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 30%; 
+}
+
+.product-image {
+    background-color: #cccccc; 
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #666;
+}
+
+.product-card h3 {
+    margin-bottom: 8px;
+}
+
+.product-card p {
+    color: #ff6f00; 
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.product-card button {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* --- 5. 頁尾樣式 (Footer) --- */
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+.footer a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+/* --- 6. 跨頁面內容樣式 (About, Contact, Products Pages) --- */
 .page-content {
-    max-width: 900px; /* 設定頁面內容最大寬度 */
-    margin: 50px auto; /* 居中對齊 */
+    max-width: 900px; 
+    margin: 50px auto; 
     padding: 20px;
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    /* 關鍵修正：讓內容區塊自動擴展，將 footer 推到底部 */
-    flex-grow: 1; 
+    flex-grow: 1; /* 讓內容區塊自動擴展，將 footer 推到底部 */
 }
-/* ... 後面接續其他的 .page-content 內部樣式，例如 h1, .product-list, form 等 */
+
+.page-content h1 {
+    font-size: 2.5em;
+    color: #007bff;
+    border-bottom: 2px solid #e0f7fa;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.intro-text {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* 產品清單卡片 (products.html) */
+.product-list {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.item-card {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-left: 5px solid #ff6f00; 
+    flex: 1;
+}
+
+.item-card h3 {
+    color: #01579b;
+    margin-bottom: 10px;
+}
+
+/* 聯絡表單 (contact.html) */
+.contact-form-placeholder input[type="text"],
+.contact-form-placeholder input[type="email"],
+.contact-form-placeholder textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.contact-form-placeholder button[type="submit"] {
+    padding: 12px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}

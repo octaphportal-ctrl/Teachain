@@ -13,13 +13,13 @@ body {
     background-color: #f8f8f8;
     display: flex; 
     flex-direction: column; 
-    min-height: 100vh; /* 確保 body 至少佔滿視窗高度 */
+    min-height: 100vh; 
 }
 
 /* --- 2. 導覽列樣式 (Navbar) --- */
 .navbar {
-    display: flex; /* 確保水平佈局 */
-    justify-content: space-between; /* 元素之間留白 */
+    display: flex; 
+    justify-content: space-between; 
     align-items: center; 
     background-color: #ffffff; 
     padding: 15px 5%; 
@@ -28,6 +28,7 @@ body {
 }
 
 .logo {
+    /* 品牌名稱 Tea Chain */
     font-size: 1.5em;
     font-weight: bold;
     color: #007bff; 
@@ -35,7 +36,7 @@ body {
 
 .navbar nav ul {
     list-style: none;
-    display: flex; /* 確保導覽連結水平排列 */
+    display: flex; 
 }
 
 .navbar nav li {
@@ -53,14 +54,7 @@ body {
     color: #ff6f00; 
 }
 
-.cart-button {
-    padding: 8px 15px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
+/* 購物車按鈕 (.cart-button) 樣式已移除 */
 
 
 /* --- 3. 首頁主視覺區塊樣式 (Hero Section) --- */
@@ -82,6 +76,7 @@ body {
     margin-bottom: 20px;
 }
 
+/* 立即選購按鈕 (.cta-button) 樣式將保留，但我們會在 HTML 中移除按鈕 */
 .cta-button {
     padding: 12px 30px;
     background-color: #ff6f00; 
@@ -140,6 +135,7 @@ body {
     margin-bottom: 15px;
 }
 
+/* 移除加入購物車按鈕，保留樣式但不使用 */
 .product-card button {
     width: 100%;
     padding: 10px;
@@ -156,6 +152,79 @@ body {
     color: white;
     text-align: center;
     padding: 20px 5%; 
-    margin-top: auto; /* 關鍵：推動 footer 到頁面底部 */
-    display: flex; /* 確保頁尾內容水平排列 */
+    margin-top: auto; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    width: 100%;
+}
+
+.footer a {
+    color: #007bff;
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+/* --- 6. 跨頁面內容樣式 (About, Contact, Products Pages) --- */
+.page-content {
+    max-width: 900px; 
+    margin: 50px auto; 
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    flex-grow: 1; 
+}
+
+.page-content h1 {
+    font-size: 2.5em;
+    color: #007bff;
+    border-bottom: 2px solid #e0f7fa;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.intro-text {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* 產品清單卡片 (products.html) */
+.product-list {
+    display: flex;
+    gap: 20px;
     justify-content: space-between;
+}
+
+.item-card {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-left: 5px solid #ff6f00; 
+    flex: 1;
+}
+
+.item-card h3 {
+    color: #01579b;
+    margin-bottom: 10px;
+}
+
+/* 聯絡表單 (contact.html) - 僅保留樣式，HTML已移除表單元素 */
+.contact-form-placeholder input[type="text"],
+.contact-form-placeholder input[type="email"],
+.contact-form-placeholder textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.contact-form-placeholder button[type="submit"] {
+    padding: 12px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
